@@ -21,14 +21,20 @@ export type DecrementCounterActionType = {
     type: "DECREMENT-COUNTER"
 
 }
+export type SetNumActionType = {
+    type: "SET-NUMBERS"
+    minVal: number
+    maxVal: number
 
-export type ActionTypes = IncrementCounterActionType | DecrementCounterActionType
+}
+
+export type ActionTypes = IncrementCounterActionType | DecrementCounterActionType | SetNumActionType
 
 let InitialState: CounterBlockType = {
 
     count: 0,
     error: '',
-    minValue: 0,
+    minValue: 2,
     maxValue: 5,
 
 
@@ -45,8 +51,11 @@ const counterReducer = (state = InitialState, action: ActionTypes): CounterBlock
         }
         case "DECREMENT-COUNTER": {
             console.log("Decrement works")
-            return (state.count !== 0 ? {...state, count: 0} : state);
+            return (state.count !== state.minValue ? {...state, count: state.minValue} : state);
 
+        }
+        case "SET-NUMBERS": {
+            return {...state, count: action.minVal, maxValue: action.maxVal};
         }
 
 
