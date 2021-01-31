@@ -13,9 +13,9 @@ export type SupperButtonPropsType = {
 
 
 
-export const SupperButton:React.FC<SupperButtonPropsType> = ({changeValue}) => {
+export const SupperButton:React.FC<SupperButtonPropsType> = ({changeValue, children}) => {
 
 
 
-    return <button onClick={changeValue}>increment</button>
+    return <button onClick={changeValue}>{children}</button>
 }

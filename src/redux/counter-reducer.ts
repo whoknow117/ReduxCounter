@@ -3,6 +3,7 @@ export type CounterBlockType = {
     error: string
     minValue: number
     maxValue: number
+    mode: boolean
 
 }
 
@@ -10,6 +11,10 @@ export type SetNumbersActionType = {
     type: "SET-NUMBERS"
     maxVal: number
     minVal: number
+}
+export type ChangeValueActionType = {
+    type: "CHANGE-VALUE"
+    value: number
 }
 
 
@@ -27,16 +32,29 @@ export type SetNumActionType = {
     maxVal: number
 
 }
+export type SetMaxValueActionType = {
+    type: "SET-MAX-VALUE"
+    value: number
+}
+export type SetMinValueActionType = {
+    type: "SET-MIN-VALUE"
+    value: number
+}
 
-export type ActionTypes = IncrementCounterActionType | DecrementCounterActionType | SetNumActionType
+export type ActionTypes = IncrementCounterActionType
+    | DecrementCounterActionType
+    | SetNumActionType
+    | ChangeValueActionType
+    | SetMinValueActionType
+    | SetMaxValueActionType
 
 let InitialState: CounterBlockType = {
 
     count: 0,
     error: '',
-    minValue: 2,
-    maxValue: 5,
-
+    minValue: 4,
+    maxValue: 11,
+    mode: false
 
 }
 
@@ -55,9 +73,21 @@ const counterReducer = (state = InitialState, action: ActionTypes): CounterBlock
 
         }
         case "SET-NUMBERS": {
-            return {...state, count: action.minVal, maxValue: action.maxVal};
-        }
 
+
+            return {...state, minValue: action.minVal, count: action.minVal, maxValue: action.maxVal, mode: true};
+        }
+        case "SET-MIN-VALUE": {
+            let copyState = {...state}
+            if(copyState.maxValue > copyState.minValue && copyState.maxValue > 0) {
+                copyState.error = "set value";
+                copyState.minValue = action.value;
+            }
+            return copyState;
+        }
+        case "SET-MAX-VALUE": {
+            return {...state, maxValue: action.value}
+        }
 
         default:
             return state
@@ -66,11 +96,33 @@ const counterReducer = (state = InitialState, action: ActionTypes): CounterBlock
 }
 
 
-export const SetNumbersAC = (minVal: number, maxVal: number) => {
+export const SetNumbersAC = (minVal: number, maxVal: number): SetNumActionType => {
     return {
         type: "SET-NUMBERS",
         maxVal: maxVal,
-        minVal: minVal
+        minVal: minVal,
+
+    }
+}
+
+export const setMaxValueAC = (value: number): SetMaxValueActionType => {
+    return {
+        type: "SET-MAX-VALUE",
+        value: value
+    }
+}
+
+export const setMinValueAC = (value: number): SetMinValueActionType => {
+    return {
+        type: "SET-MIN-VALUE",
+        value: value
+    }
+}
+
+export const changeValueAC = (value: number): ChangeValueActionType => {
+    return {
+        type: "CHANGE-VALUE",
+        value: value
     }
 }
 
