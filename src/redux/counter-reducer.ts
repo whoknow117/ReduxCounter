@@ -35,10 +35,12 @@ export type SetNumActionType = {
 export type SetMaxValueActionType = {
     type: "SET-MAX-VALUE"
     value: number
+
 }
 export type SetMinValueActionType = {
     type: "SET-MIN-VALUE"
     value: number
+
 }
 
 export type ActionTypes = IncrementCounterActionType
@@ -78,15 +80,10 @@ const counterReducer = (state = InitialState, action: ActionTypes): CounterBlock
             return {...state, minValue: action.minVal, count: action.minVal, maxValue: action.maxVal, mode: true};
         }
         case "SET-MIN-VALUE": {
-            let copyState = {...state}
-            if(copyState.maxValue > copyState.minValue && copyState.maxValue > 0) {
-                copyState.error = "set value";
-                copyState.minValue = action.value;
-            }
-            return copyState;
+            return {...state, minValue : action.value}
         }
         case "SET-MAX-VALUE": {
-            return {...state, maxValue: action.value}
+            return {...state,maxValue: action.value}
         }
 
         default:
@@ -105,17 +102,19 @@ export const SetNumbersAC = (minVal: number, maxVal: number): SetNumActionType =
     }
 }
 
-export const setMaxValueAC = (value: number): SetMaxValueActionType => {
+export const setMaxValueAC = (value: number ): SetMaxValueActionType => {
     return {
         type: "SET-MAX-VALUE",
-        value: value
+        value: value,
+
     }
 }
 
-export const setMinValueAC = (value: number): SetMinValueActionType => {
+export const setMinValueAC = (value: number ): SetMinValueActionType => {
     return {
         type: "SET-MIN-VALUE",
-        value: value
+        value: value,
+
     }
 }
 
