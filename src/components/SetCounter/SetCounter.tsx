@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from './SetCounter.module.scss';
 import SupperInput from "../common/SupperInput/SupperInput";
 import {SupperButton} from "../common/SupperButton/SupperButton";
 import {CounterBlockType, setMaxValueAC, setMinValueAC, SetNumbersAC} from "../../redux/counter-reducer";
@@ -22,10 +23,10 @@ export const SetCounter:React.FC<SetCounterPropsType> = ({counter}) => {
 
     const setNumbers = () => {dispatch(SetNumbersAC(counter.minValue, counter.maxValue))}
 
-    return  <div>
+    return  <div className={classes.setCounter}>
             <SupperInput value={counter.count} counter={counter} onChangeInput={MinValue}/>
             <SupperInput value={counter.count} counter={counter} onChangeInput={MaxValue}/>
             <SupperButton disabled={counter.mode === true || counter.minValue >= counter.maxValue || counter.minValue < 0} changeValue={setNumbers}>set</SupperButton>
 
-    </div>
+     </div>
 }
