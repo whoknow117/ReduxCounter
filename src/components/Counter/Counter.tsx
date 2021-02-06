@@ -44,7 +44,7 @@ export const Counter:React.FC<CounterPropsType> = ({counter,error,setError}) => 
 
 
     return  <div className={classes.counter}>
-        <span>{counter.mode ? counter.count : error}</span>
+        <span className={classes.count}>{counter.mode ? counter.count : error}</span>
 
        <div className={classes.btns}>
            <SupperButton changeValue={incrementValue}>+</SupperButton>

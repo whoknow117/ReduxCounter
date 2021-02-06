@@ -8,7 +8,22 @@
   width: 200px;
   height: auto;
   padding: 20px;
-  border: 1px solid silver;
+  box-shadow: 0 2px 4px rgba(233,223,151,.2);
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(233,233,156,.2);
+    filter: blur(4px);
+    z-index: -1;
+  ;
+  }
   input {
     margin: 10px 0;
   }
