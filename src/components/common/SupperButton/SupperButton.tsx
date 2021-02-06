@@ -17,5 +17,5 @@ export const SupperButton:React.FC<SupperButtonPropsType> = ({disabled,changeVal
 
 
 
-    return <button disabled={disabled} onClick={changeValue}>{children}</button>
+    return <button className={classes.btn} disabled={disabled} onClick={changeValue}>{children}</button>
 }

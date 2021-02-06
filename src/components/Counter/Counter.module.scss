@@ -5,8 +5,30 @@
   align-items: center;
   width: 200px;
   height: auto;
-  padding: 20px;
+  padding: 40px;
+  border: 1px solid silver;
+  border-radius: 4px;
+  color: #fff;
 
+  position: relative;
+   &:before {
+     content: '';
+     width: 100%;
+     position: absolute;
+     height: 100%;
+     top: 0;
+     left: 0;
+     z-index: -1;
+     right: 0;
+     bottom: 0;
+     background: rgba(255,255,255,.1);
+     filter: blur(4px);
+   }
+  .btns {
+    display: flex;
+    justify-content: space-between;
+
+  }
   span {
     margin: 20px 0;
     font-size: 50px;

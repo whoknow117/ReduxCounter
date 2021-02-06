@@ -46,8 +46,10 @@ export const Counter:React.FC<CounterPropsType> = ({counter,error,setError}) => 
     return  <div className={classes.counter}>
         <span>{counter.mode ? counter.count : error}</span>
 
-        <SupperButton changeValue={incrementValue}>inc</SupperButton>
-        <SupperButton disabled={counter.count === counter.minValue} changeValue={decrementValue}>res</SupperButton>
+       <div className={classes.btns}>
+           <SupperButton changeValue={incrementValue}>+</SupperButton>
+           <SupperButton disabled={counter.count === counter.minValue} changeValue={decrementValue}>Reset</SupperButton>
+       </div>
 
 
 

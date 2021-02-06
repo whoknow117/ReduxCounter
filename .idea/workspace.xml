@@ -6,8 +6,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Counter/Counter.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Counter/Counter.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Counter/Counter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Counter/Counter.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SetCounter/SetCounter.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SetCounter/SetCounter.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SetCounter/SetCounter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SetCounter/SetCounter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/SupperButton/SupperButton.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/SupperButton/SupperButton.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/SupperButton/SupperButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/SupperButton/SupperButton.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +48,8 @@
       <workItem from="1612203962118" duration="1123000" />
       <workItem from="1612208301332" duration="558000" />
       <workItem from="1612293243524" duration="1076000" />
-      <workItem from="1612461861334" duration="493000" />
+      <workItem from="1612461861334" duration="532000" />
+      <workItem from="1612630247769" duration="1446000" />
     </task>
     <servers />
   </component>

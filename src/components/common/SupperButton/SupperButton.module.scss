@@ -1,0 +1,22 @@
+
+
+
+
+.btn {
+  border: none;
+  font-family: Arial,sans-serif;
+  margin: 10px;
+  padding: 10px 20px;
+  font-weight: 700;
+  color: darkslategrey;
+  border-radius: 4px;
+  outline: none;
+  transition: .3s;
+  background: teal;
+  color: #fff;
+  &:hover {
+    cursor: pointer;
+    background: #124040;
+    color: #fff;
+  }
+}
