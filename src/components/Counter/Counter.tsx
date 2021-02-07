@@ -43,7 +43,7 @@ export const Counter:React.FC<CounterPropsType> = ({counter,error,setError}) => 
 
 
 
-    return  <div className={classes.counter}>
+    return  <div className={`${classes.counter} ${ counter.mode ? classes.animClass : ""}`}>
         <span className={classes.count}>{counter.mode ? counter.count : error}</span>
 
        <div className={classes.btns}>

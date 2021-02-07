@@ -20,7 +20,7 @@ const SupperInput:React.FC<SupperInputType> = ({value,error,counter,onChange, on
     }
 
 
-    return <input  className={`${classes.input} ${error ? classes.error : ""}`} onChange={onChangeCallback} {...restProps}  type="number"/>
+    return <input  className={`${classes.input} ${counter.minValue >= counter.maxValue || counter.minValue < 0 ? classes.error : ""}`} onChange={onChangeCallback} {...restProps}  type="number"/>
 }
 
 

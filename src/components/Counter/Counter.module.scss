@@ -3,14 +3,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200px;
+  width: 400px;
   height: auto;
   padding: 40px;
   box-shadow: 0 2px 4px rgba(233,223,151,.2);
   border-radius: 4px;
   color: #fff;
-
+  opacity: 1;
+  visibility: visible;
   position: relative;
+
   .count {
     position: relative;
     padding: 20px;
@@ -32,6 +34,7 @@
        background: rgba(233,233,156,.2);
        filter: blur(4px);
        z-index: -1;
+
      ;
      }
   }
@@ -59,3 +62,10 @@
     
   }
 }
+
+.animClass {
+  animation: rotateAnim 2s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
